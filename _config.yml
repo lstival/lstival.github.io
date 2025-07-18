@@ -81,14 +81,15 @@ analytics:
 # Site Author
 author:
   name             : "Leandro Stival"
-  avatar           : "profile.jpg"
-  bio              : "Phd Student at IC Unicamp"
-  location         : "Araras, Brazil"
+  avatar           : "profile.png" # placed in /images/
+  # bio              : "Phd Student at IC Unicamp"
+  bio              : "Ph.D. in Computer Science at the Institute of Computing, University of Campinas (IC-Unicamp), Brazil."
+  location         : "Wageningen, The Netherlands"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Bw3dn34AAAAJ&hl=en"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  email            : "leandro.stival@ic.unicamp.br"
+  researchgate     : "https://www.researchgate.net/profile/Leandro-Stival-3?ev=hdr_xprf"
   uri              :
   bitbucket        :
   codepen          :
@@ -103,7 +104,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "leandro-stival-63651ba0"
-  orcid            : 
+  orcid            : "https://orcid.org/0000-0002-3379-6813"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username

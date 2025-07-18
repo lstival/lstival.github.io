@@ -11,6 +11,12 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 
+# Faraday retry middleware for v2.0+ compatibility
+gem "faraday-retry"
+
+# WebRick gem for Ruby 3.0+ compatibility  
+gem "webrick"
+
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 
