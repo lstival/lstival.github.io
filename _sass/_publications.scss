@@ -1,0 +1,204 @@
+// Publications page styles
+// Light theme variables
+:root {
+  --pub-bg-color: #fff;
+  --pub-text-color: #24292e;
+  --pub-border-color: #e1e4e8;
+  --pub-hover-border-color: #0366d6;
+  --pub-card-bg: #fff;
+  --pub-details-bg: #f8fafc;
+  --pub-metadata-bg: #fff;
+  --pub-code-bg: #2d3748;
+  --pub-code-text: #e2e8f0;
+}
+
+// Publication cards
+.publication-grid {
+  display: block;
+}
+
+.publication-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--pub-border-color);
+  border-radius: 8px;
+  background: var(--pub-card-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  &:hover {
+    border-color: var(--pub-hover-border-color);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.15);
+    transform: translateY(-2px);
+
+    .publication-card__title {
+      color: #0256cc;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+    color: var(--pub-hover-border-color);
+    transition: color 0.2s ease;
+  }
+
+  &__meta {
+    margin-bottom: 0.5rem;
+    color: #586069;
+    font-style: italic;
+  }
+
+  &__authors {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--pub-text-color);
+  }
+
+  &__excerpt {
+    margin-bottom: 1rem;
+    color: #586069;
+    line-height: 1.5;
+  }
+
+  &__hint {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.click-hint {
+  color: var(--pub-hover-border-color);
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+// Publication details (expanded view)
+.publication-details {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--pub-details-bg);
+  border-radius: 6px;
+  border: 1px solid var(--pub-border-color);
+  animation: slideDown 0.3s ease-out;
+
+  &__content {
+    h4 {
+      color: var(--pub-text-color);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    h5 {
+      color: var(--pub-text-color);
+      margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.publication-abstract {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.publication-metadata {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--pub-metadata-bg);
+  border-radius: 4px;
+  border: 1px solid var(--pub-border-color);
+
+  p {
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+  }
+}
+
+.publication-actions {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+// Buttons
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+
+  &--primary {
+    background-color: #0366d6;
+    color: white;
+
+    &:hover {
+      background-color: #0256cc;
+      color: white;
+    }
+  }
+
+  &--secondary {
+    background-color: #6c757d;
+    color: white;
+
+    &:hover {
+      background-color: #5a6268;
+    }
+  }
+}
+
+// BibTeX code blocks
+.publication-bibtex {
+  pre {
+    background: var(--pub-code-bg);
+    color: var(--pub-code-text);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    margin: 0;
+    border: 1px solid var(--pub-border-color);
+  }
+
+  code {
+    color: var(--pub-code-text);
+  }
+}
+
+// Animation for expanding details
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .publication-card {
+    padding: 1rem;
+  }
+  
+  .publication-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    text-align: center;
+  }
+}

@@ -1,0 +1,57 @@
+// Dark mode styles for publications
+[data-theme="dark"] {
+  // Override CSS variables for dark mode
+  --pub-bg-color: #0d1117;
+  --pub-text-color: #f0f6fc;
+  --pub-border-color: #30363d;
+  --pub-hover-border-color: #58a6ff;
+  --pub-card-bg: #161b22;
+  --pub-details-bg: #21262d;
+  --pub-metadata-bg: #161b22;
+  --pub-code-bg: #0d1117;
+  --pub-code-text: #f0f6fc;
+
+  // Publication card specific dark mode styles
+  .publication-card {
+    &:hover .publication-card__title {
+      color: #79c0ff;
+    }
+
+    &__meta {
+      color: #8b949e;
+    }
+
+    &__excerpt {
+      color: #8b949e;
+    }
+  }
+
+  // Publication details dark mode
+  .publication-abstract {
+    color: #c9d1d9;
+  }
+
+  .publication-metadata p {
+    color: #c9d1d9;
+  }
+
+  // Button dark mode styles
+  .btn {
+    &--primary {
+      background-color: #238636;
+
+      &:hover {
+        background-color: #2ea043;
+      }
+    }
+
+    &--secondary {
+      background-color: #21262d;
+      border: 1px solid #30363d;
+
+      &:hover {
+        background-color: #30363d;
+      }
+    }
+  }
+}
