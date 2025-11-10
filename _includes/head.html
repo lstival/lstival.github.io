@@ -15,6 +15,36 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<script>
+  (function () {
+    var storageKey = 'site-theme';
+    var root = document.documentElement;
+
+    function applyTheme(theme) {
+      if (!theme) {
+        return;
+      }
+      root.setAttribute('data-theme', theme);
+    }
+
+    try {
+      var stored = window.localStorage.getItem(storageKey);
+      if (stored) {
+        applyTheme(stored);
+        return;
+      }
+    } catch (err) {
+      // localStorage may be unavailable; fall back to system preference
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  })();
+</script>
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 

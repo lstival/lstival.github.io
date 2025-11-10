@@ -1,0 +1,133 @@
+---
+layout: default
+---
+
+{% assign pub = site.data.publications.publications | where: "id", page.pub_id | first %}
+
+<div class="publication-single">
+  <header class="publication-header">
+    <h1>{% if pub %}{{ pub.title }}{% else %}{{ page.title }}{% endif %}</h1>
+    
+    {% if pub.authors %}
+      <p class="publication-authors">
+        <strong>Authors:</strong> {{ pub.authors }}
+      </p>
+    {% endif %}
+    
+    {% if pub.venue %}
+      <p class="publication-venue">
+        <strong>Published in:</strong> {{ pub.venue }}
+        {% if pub.year %} ({{ pub.year }}){% endif %}
+      </p>
+    {% endif %}
+    
+    {% if pub.volume or pub.pages %}
+      <p class="publication-details">
+        {% if pub.volume %}<strong>Volume:</strong> {{ pub.volume }}{% endif %}
+        {% if pub.pages %} | <strong>Pages:</strong> {{ pub.pages }}{% endif %}
+      </p>
+    {% endif %}
+    
+    {% if pub.publisher %}
+      <p class="publication-publisher">
+        <strong>Publisher:</strong> {{ pub.publisher }}
+      </p>
+    {% endif %}
+  </header>
+
+  <div class="publication-content">
+    {% if pub.abstract %}
+      <section class="publication-abstract">
+        <h2>Abstract</h2>
+        <p>{{ pub.abstract }}</p>
+      </section>
+    {% endif %}
+
+    {% if pub.paperurl and pub.paperurl != '' %}
+      <section class="publication-links">
+        <a href="{{ pub.paperurl }}" target="_blank" rel="noopener" class="btn btn--primary">
+          📄 Download Paper
+        </a>
+      </section>
+    {% endif %}
+
+    {% if content %}
+      <section class="publication-details-content">
+        {{ content }}
+      </section>
+    {% endif %}
+
+    {% if pub.bibtex %}
+      <section class="publication-bibtex">
+        <h2>BibTeX Citation</h2>
+        <pre><code>{{ pub.bibtex }}</code></pre>
+      </section>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.publication-single {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.publication-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 1rem;
+}
+
+.publication-header h1 {
+  color: #0366d6;
+  margin-bottom: 1rem;
+}
+
+.publication-authors,
+.publication-venue,
+.publication-details,
+.publication-publisher {
+  margin-bottom: 0.5rem;
+  color: #586069;
+}
+
+.publication-content section {
+  margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+  color: #24292e;
+  margin-bottom: 1rem;
+}
+
+.publication-links {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.btn--primary {
+  background-color: #0366d6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.btn--primary:hover {
+  background-color: #0256cc;
+  color: white;
+}
+
+.publication-bibtex pre {
+  background: #f6f8fa;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  border: 1px solid #e1e4e8;
+}
+</style>

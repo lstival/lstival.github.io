@@ -1,4 +1,78 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+	(function () {
+		var storageKey = 'site-theme';
+		var root = document.documentElement;
+		var toggle = document.getElementById('theme-toggle');
+		if (!toggle) {
+			return;
+		}
+
+		var label = toggle.querySelector('.theme-toggle__label');
+
+		function currentTheme() {
+			return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+		}
+
+		function applyTheme(theme) {
+			root.setAttribute('data-theme', theme);
+			if (label) {
+				label.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+			} else {
+				toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+			}
+			toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+			toggle.setAttribute('aria-pressed', theme === 'dark');
+		}
+
+		function getStoredTheme() {
+			try {
+				return window.localStorage.getItem(storageKey);
+			} catch (err) {
+				return null;
+			}
+		}
+
+		function persistTheme(theme) {
+			try {
+				window.localStorage.setItem(storageKey, theme);
+			} catch (err) {
+				// Storage may be unavailable; ignore.
+			}
+		}
+
+		var stored = getStoredTheme();
+		if (stored) {
+			applyTheme(stored);
+		} else {
+			applyTheme(currentTheme());
+		}
+
+		toggle.addEventListener('click', function () {
+			var next = currentTheme() === 'dark' ? 'light' : 'dark';
+			applyTheme(next);
+			persistTheme(next);
+		});
+
+		if (window.matchMedia) {
+			var media = window.matchMedia('(prefers-color-scheme: dark)');
+			if (media.addEventListener) {
+				media.addEventListener('change', function (event) {
+					if (!getStoredTheme()) {
+						applyTheme(event.matches ? 'dark' : 'light');
+					}
+				});
+			} else if (media.addListener) {
+				media.addListener(function (event) {
+					if (!getStoredTheme()) {
+						applyTheme(event.matches ? 'dark' : 'light');
+					}
+				});
+			}
+		}
+	})();
+</script>
+
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

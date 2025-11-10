@@ -1,0 +1,179 @@
+publications:
+  - id: stival2025cvc
+    title: "CVC: Contrastive Autoencoders for Video Colorization"
+    authors: "Leandro Stival, Ricardo da Silva Torres, Helio Pedrini"
+    venue: "Intelligent Systems Conference"
+    year: 2025
+    pages: "388–401"
+    publisher: "Springer"
+    paperurl: "https://link.springer.com/chapter/10.1007/978-3-032-00071-2_24"
+    abstract: "This paper introduces CVC, a contrastive autoencoder approach for video colorization that leverages contrastive learning to improve temporal coherence and color fidelity across frames."
+    bibtex: |
+      @inproceedings{stival2025cvc,
+          title={CVC: Contrastive Autoencoders for Video Colorization},
+          author={Stival, Leandro and Torres, Ricardo da Silva and Pedrini, Helio},
+          booktitle={Intelligent Systems Conference},
+          pages={388--401},
+          year={2025},
+          organization={Springer}
+      }
+    date: 2025-07-31
+    excerpt: "CVC: Contrastive Autoencoders for Video Colorization, presented at Intelligent Systems Conference, pages 388–401, 2025."
+
+  - id: stival2025semantically
+    title: "Semantically-Aware Contrastive Learning for Multispectral Remote Sensing Images"
+    authors: "Leandro Stival, Ricardo da Silva Torres, Helio Pedrini"
+    venue: "ISPRS Journal of Photogrammetry and Remote Sensing"
+    year: 2025
+    volume: 223
+    pages: "173–187"
+    publisher: "Elsevier"
+    paperurl: "https://www.sciencedirect.com/science/article/pii/S0924271625000826?casa_token=_B3qmx1P5vIAAAAA:HxBnwb7AfgOi3THXemjneBGvmkLNR0I5u9B96Xq5ApipTPXoplWDN-e8z418PdSBIpkiJtddmu0"
+    abstract: "This paper introduces a semantically-aware contrastive learning approach for multispectral remote sensing images. The proposed method leverages semantic information to improve feature representation and discrimination, leading to enhanced performance in remote sensing image analysis tasks."
+    bibtex: |
+      @article{stival2025semantically,
+          title={Semantically-Aware Contrastive Learning for multispectral remote sensing images},
+          author={Stival, Leandro and da Silva Torres, Ricardo and Pedrini, Helio},
+          journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+          volume={223},
+          pages={173--187},
+          year={2025},
+          publisher={Elsevier}
+      }
+    date: 2025-05-02
+    excerpt: "This paper introduces a semantically-aware contrastive learning approach for multispectral remote sensing images, published in ISPRS Journal of Photogrammetry and Remote Sensing, volume 223, pages 173–187, 2025."
+
+  - id: stival2024enhancing
+    title: "Enhancing Video Colorization with Deep Learning: A Comprehensive Analysis of Training Loss Functions"
+    authors: "Leandro Stival, Ricardo da Silva Torres, Helio Pedrini"
+    venue: "Intelligent Systems Conference"
+    year: 2024
+    pages: "496–509"
+    publisher: "Springer"
+    paperurl: "https://link.springer.com/chapter/10.1007/978-3-031-66329-1_32"
+    abstract: "This paper provides a comprehensive analysis of various training loss functions for deep learning-based video colorization. The study evaluates the impact of different loss formulations on colorization quality and temporal consistency, offering insights for designing more effective video colorization models."
+    bibtex: |
+      @inproceedings{stival2024enhancing,
+          title={Enhancing Video Colorization with Deep Learning: A Comprehensive Analysis of Training Loss Functions},
+          author={Stival, Leandro and da Silva Torres, Ricardo and Pedrini, Helio},
+          booktitle={Intelligent Systems Conference},
+          pages={496--509},
+          year={2024},
+          organization={Springer}
+      }
+    date: 2024-07-31
+    excerpt: "This paper presents a comprehensive analysis of training loss functions for deep learning-based video colorization, published in Intelligent Systems Conference, pages 496–509, 2024."
+
+  - id: stival2024video
+    title: "Video Colorization Based on a Diffusion Model Implementation"
+    authors: "Leandro Stival, Ricardo da Silva Torres, Helio Pedrini"
+    venue: "Intelligent Systems Conference"
+    year: 2024
+    pages: "117–131"
+    publisher: "Springer"
+    paperurl: "https://link.springer.com/chapter/10.1007/978-3-031-66329-1_10"
+    abstract: "This paper presents a diffusion model implementation for video colorization. The proposed approach leverages the strengths of diffusion models to enhance colorization quality and temporal consistency in videos, providing a novel perspective for deep learning-based video colorization."
+    bibtex: |
+      @inproceedings{stival2024video,
+          title={Video Colorization Based on a Diffusion Model Implementation},
+          author={Stival, Leandro and da Silva Torres, Ricardo and Pedrini, Helio},
+          booktitle={Intelligent Systems Conference},
+          pages={117--131},
+          year={2024},
+          organization={Springer}
+      }
+    date: 2024-07-31
+    excerpt: "This paper presents a diffusion model implementation for video colorization, published in Intelligent Systems Conference, pages 117–131, 2024."
+
+  - id: stival2024cavc
+    title: "CAVC: Cosine Attention Video Colorization"
+    authors: "Leandro Stival, Ricardo da Silva Torres, Helio Pedrini"
+    venue: "Proceedings Copyright"
+    year: 2024
+    volume: 385
+    pages: "392"
+    publisher: ""
+    paperurl: "https://www.scitepress.org/Papers/2024/123485/123485.pdf"
+    abstract: "This paper presents CAVC, a cosine attention-based approach for video colorization. The method leverages attention mechanisms to enhance color propagation across video frames, resulting in improved colorization quality and temporal consistency."
+    bibtex: |
+      @article{stival2024cavc,
+          title={CAVC: Cosine Attention Video Colorization},
+          author={Stival, Leandro and da Silva Torres, Ricardo and Pedrini, Helio},
+          journal={Proceedings Copyright},
+          volume={385},
+          pages={392},
+          year={2024}
+      }
+    date: 2024-02-27
+    excerpt: "This paper introduces CAVC, a novel cosine attention-based method for video colorization, published in Proceedings Copyright, volume 385, page 392, 2024."
+
+  - id: stival2023swinfvc
+    title: "SwinFVC: A swin flow video colorization example-based method"
+    authors: "Leandro Stival, Ricardo Da Silva Torres, Helio Pedrini"
+    venue: "2023 International Conference on Machine Learning and Applications (ICMLA)"
+    year: 2023
+    pages: "69–75"
+    publisher: "IEEE"
+    paperurl: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10459909"
+    abstract: "SwinFVC presents an example-based approach for video colorization leveraging Swin Flow. The method demonstrates improved colorization quality by utilizing flow-guided information and transformer-based architectures."
+    bibtex: |
+      @inproceedings{stival2023swinfvc,
+          title={SwinFVC: A swin flow video colorization example-based method},
+          author={Stival, Leandro and Torres, Ricardo Da Silva and Pedrini, Helio},
+          booktitle={2023 International Conference on Machine Learning and Applications (ICMLA)},
+          pages={69--75},
+          year={2023},
+          organization={IEEE}
+      }
+    date: 2023-12-15
+    excerpt: "SwinFVC introduces an example-based method for video colorization using Swin Flow, presented at ICMLA 2023."
+
+  - id: stival2023survey
+    title: "Survey on video colorization: concepts, methods and applications"
+    authors: "Leandro Stival, Helio Pedrini"
+    venue: "Journal of Signal Processing Systems"
+    year: 2023
+    volume: 95
+    issue: 6
+    pages: "679–702"
+    publisher: "Springer"
+    paperurl: "https://link.springer.com/article/10.1007/s11265-023-01872-w"
+    abstract: "This paper presents a comprehensive survey on video colorization, discussing fundamental concepts, state-of-the-art methods, and a wide range of applications. The authors review traditional and deep learning approaches, analyze challenges in the field, and highlight future research directions."
+    bibtex: |
+      @article{stival2023survey,
+          title={Survey on video colorization: concepts, methods and applications},
+          author={Stival, Leandro and Pedrini, Helio},
+          journal={Journal of Signal Processing Systems},
+          volume={95},
+          number={6},
+          pages={679--702},
+          year={2023},
+          publisher={Springer}
+      }
+    date: 2023-06-01
+    excerpt: "A comprehensive survey covering concepts, methods, and applications in video colorization."
+
+  - id: stival2023ml
+    title: "Using machine learning pipeline to predict entry into the attack zone in football"
+    authors: "Leandro Stival, Allan Pinto, Felipe dos Santos Pinto de Andrade, Paulo Roberto Pereira Santiago, Henrik Biermann, Ricardo da Silva Torres, Ulisses Dias"
+    venue: "PloS ONE"
+    year: 2023
+    volume: 18
+    issue: 1
+    pages: "e0265372"
+    publisher: "PLoS"
+    paperurl: "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0265372&type=printable"
+    abstract: "This paper presents a machine learning pipeline to predict entry into the attack zone in football matches."
+    bibtex: |
+      @article{stival2023ml,
+          title={Using machine learning pipeline to predict entry into the attack zone in football},
+          author={Stival, Leandro and Pinto, Allan and Andrade, Felipe dos Santos Pinto de and Santiago, Paulo Roberto Pereira and Biermann, Henrik and Torres, Ricardo da Silva and Dias, Ulisses},
+          journal={PloS ONE},
+          volume={18},
+          number={1},
+          pages={e0265372},
+          year={2023},
+          publisher={Public Library of Science}
+      }
+    date: 2023-01-01
+    excerpt: "This paper presents a machine learning pipeline to predict entry into the attack zone in football matches."
