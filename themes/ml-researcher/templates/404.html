@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in Latent Space | {{ SITENAME }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e7ff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #6366f1;
+            border-radius: 50%;
+            animation: float 20s infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            25% {
+                transform: translateY(-100px) translateX(50px);
+            }
+
+            50% {
+                transform: translateY(-200px) translateX(-50px);
+            }
+
+            75% {
+                transform: translateY(-100px) translateX(100px);
+            }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #14b8a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        .error-image {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            margin: 2rem auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e7ff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .quote {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid #6366f1;
+            border-radius: 8px;
+            font-style: italic;
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .error-image {
+                max-width: 100%;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+
+        <img src="{{ SITEURL }}/theme/images/404-lost-in-latent-space.png" alt="Lost in Latent Space"
+            class="error-image">
+
+        <h1>Lost in Latent Space</h1>
+
+        <p>
+            Oops! It seems you've wandered into an unexplored region of the latent space.
+            The page you're looking for has been compressed into a dimension we haven't mapped yet.
+        </p>
+
+        <div class="buttons">
+            <a href="{{ SITEURL }}/" class="btn btn-primary">
+                🏠 Return to Home
+            </a>
+            <a href="{{ SITEURL }}/publications/" class="btn btn-secondary">
+                📚 View Publications
+            </a>
+        </div>
+
+        <div class="quote">
+            "Not all who wander are lost, but this page definitely is."
+            <br>— A confused neural network
+        </div>
+    </div>
+
+    <script>
+        // Generate floating particles
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+
+</html>

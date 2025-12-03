@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="page-content about-page">
+    <div class="about-hero">
+        <div class="profile-image-wrapper">
+            <div class="profile-image-placeholder large">
+                <span class="profile-emoji">🤖</span>
+            </div>
+        </div>
+
+        <div class="about-intro">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+
+    <div class="page-body">
+        {{ page.content }}
+    </div>
+</article>
+{% endblock %}
