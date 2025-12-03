@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = 'Your Name'
-SITENAME = 'Research Portfolio'
+AUTHOR = 'Leandro Stival'
+SITENAME = 'Leandro Stival'
 SITEURL = ''
 
 PATH = 'content'
@@ -20,12 +20,12 @@ AUTHOR_FEED_RSS = None
 
 # Social widget
 SOCIAL = (
-    ('Email', 'mailto:your.email@example.com'),
-    ('GitHub', 'https://github.com/yourusername'),
-    ('Google Scholar', 'https://scholar.google.com/'),
-    ('LinkedIn', 'https://www.linkedin.com/in/yourprofile'),
-    ('ResearchGate', 'https://www.researchgate.net/profile/yourprofile'),
-    ('ORCID', 'https://orcid.org/0000-0000-0000-0000'),
+    ('Email', 'mailto:leandro.stival@wur.nl'),
+    ('GitHub', 'https://github.com/lstival'),
+    ('Google Scholar', 'https://scholar.google.com/citations?user=Bw3dn34AAAAJ&hl=en'),
+    ('LinkedIn', 'https://www.linkedin.com/in/leandro-stival-63651ba0'),
+    ('ResearchGate', 'https://www.researchgate.net/profile/Leandro-Stival-3'),
+    ('ORCID', 'https://orcid.org/0000-0002-3379-6813'),
 )
 
 DEFAULT_PAGINATION = False
@@ -42,6 +42,17 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 # Static paths
 STATIC_PATHS = ['images', 'extra']
+
+# Extra path metadata - copies 404.html to root of output
+EXTRA_PATH_METADATA = {
+    'extra/404.html': {'path': '404.html'},
+}
+
+# Treat standalone HTML files as static assets
+READERS = {
+    'html': None,
+    'htm': None,
+}
 
 # Page settings
 PAGE_URL = '{slug}/'
@@ -63,11 +74,12 @@ CATEGORY_SAVE_AS = ''
 TAG_SAVE_AS = ''
 
 # Site metadata
-SITE_DESCRIPTION = 'Personal research website showcasing publications, research interests, and CV'
-SITE_KEYWORDS = 'machine learning, deep learning, computer vision, research, AI'
+SITE_DESCRIPTION = 'Leandro Stival - Ph.D. in Computer Science specializing in Self-Supervised Learning'
+SITE_KEYWORDS = 'machine learning, deep learning, computer vision, video colorization, self-supervised learning, research, AI'
 
 # Custom settings
 PROFILE_IMAGE = 'images/profile.jpg'
-LOCATION = 'Your City, Country'
-POSITION = 'Ph.D. Researcher in Machine Learning'
-INSTITUTION = 'Your University'
+LOCATION = 'Wageningen, Netherlands'
+POSITION = 'Ph.D. in Computer Science'
+INSTITUTION = 'Wageningen University & Research'
+FAVICON = 'images/icon_logo.png'

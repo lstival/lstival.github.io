@@ -275,4 +275,33 @@
     });
 })();
 
+// ============================================
+// Profile Image Toggle
+// ============================================
+(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        const profileToggle = document.getElementById('profile-toggle');
+        const profileImg = document.getElementById('profile-img');
+        const profileEmoji = document.getElementById('profile-emoji');
+
+        if (profileToggle && profileImg && profileEmoji) {
+            let showingImage = true;
+
+            profileToggle.addEventListener('click', function () {
+                if (showingImage) {
+                    profileImg.style.display = 'none';
+                    profileEmoji.style.display = 'flex';
+                } else {
+                    profileImg.style.display = 'block';
+                    profileEmoji.style.display = 'none';
+                }
+                showingImage = !showingImage;
+            });
+
+            // Add cursor pointer to indicate clickability
+            profileToggle.style.cursor = 'pointer';
+        }
+    });
+})();
+
 console.log('🤖 ML Researcher Theme loaded! Built with Python & ML magic ✨');
