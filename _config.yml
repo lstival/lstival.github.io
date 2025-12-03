@@ -1,0 +1,40 @@
+title: Leandro Stival
+author: Leandro Stival
+email: leandro.stival@wur.nl
+description: Leandro Stival - Ph.D. in Computer Science specializing in Self-Supervised Learning
+keywords: machine learning, deep learning, computer vision, video colorization, self-supervised learning, research, AI
+url: "https://lstival.github.io"
+baseurl: "/my_website"
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+social_links:
+  - label: Email
+    title: Email
+    url: "mailto:leandro.stival@wur.nl"
+  - label: GitHub
+    title: GitHub
+    url: "https://github.com/lstival"
+  - label: Google Scholar
+    title: Google Scholar
+    url: "https://scholar.google.com/citations?user=Bw3dn34AAAAJ&hl=en"
+  - label: LinkedIn
+    title: LinkedIn
+    url: "https://www.linkedin.com/in/leandro-stival-63651ba0"
+  - label: ResearchGate
+    title: ResearchGate
+    url: "https://www.researchgate.net/profile/Leandro-Stival-3"
+  - label: ORCID
+    title: ORCID
+    url: "https://orcid.org/0000-0002-3379-6813"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .github
+  - .git
+  - .gitignore
+  - .vscode

@@ -8,10 +8,11 @@ venv/
 env/
 ENV/
 
-# Pelican
-output/
-*.pid
-.cache/
+# Jekyll
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
 
 # OS
 .DS_Store

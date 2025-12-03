@@ -1,3 +1,7 @@
+---
+permalink: /404.html
+layout: none
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -202,7 +206,7 @@
     <div class="container">
         <div class="error-code">404</div>
 
-        <img src="/images/404-lost-in-latent-space.png" alt="Lost in Latent Space"
+        <img src="{{ '/images/404-lost-in-latent-space.png' | relative_url }}" alt="Lost in Latent Space"
             class="error-image" onerror="this.style.display='none'">
 
         <h1>Lost in Latent Space</h1>
@@ -213,10 +217,10 @@
         </p>
 
         <div class="buttons">
-            <a href="/" class="btn btn-primary">
+            <a href="{{ '/' | relative_url }}" class="btn btn-primary">
                 🏠 Return to Home
             </a>
-            <a href="/publications/" class="btn btn-secondary">
+            <a href="{{ '/publications/' | relative_url }}" class="btn btn-secondary">
                 📚 View Publications
             </a>
         </div>
