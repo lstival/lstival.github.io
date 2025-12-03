@@ -100,7 +100,7 @@ GitHub Pages builds and deploys automatically via `.github/workflows/github-page
 
 ## 🐛 Troubleshooting
 
-- **Missing styles/scripts**: Ensure links use the correct base URL; by default `_config.yml` sets `baseurl: "/my_website"` for project pages. Adjust for custom domains.
+- **Missing styles/scripts**: Ensure links use the correct base URL; adjust `baseurl` in `_config.yml` as needed for your deployment.
 - **Local serve mismatch**: Run `bundle exec jekyll serve --baseurl ""` locally to match root paths.
 - **Build failures**: Check the Actions log; run `bundle exec jekyll build` locally to reproduce.
 

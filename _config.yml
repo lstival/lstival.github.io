@@ -4,11 +4,15 @@ email: leandro.stival@wur.nl
 description: Leandro Stival - Ph.D. in Computer Science specializing in Self-Supervised Learning
 keywords: machine learning, deep learning, computer vision, video colorization, self-supervised learning, research, AI
 url: "https://lstival.github.io"
-baseurl: "/my_website"
+baseurl: ""
 permalink: pretty
 markdown: kramdown
 kramdown:
   input: GFM
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 social_links:
   - label: Email
     title: Email
