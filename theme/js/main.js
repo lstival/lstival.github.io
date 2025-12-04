@@ -1,6 +1,74 @@
 // ============================================
-// ML Researcher Theme - Interactive Features
+// Christmas Theme - ML Researcher
 // ============================================
+
+// ============================================
+// Falling Snow Animation
+// ============================================
+(function () {
+    // Create snow container
+    const snowContainer = document.createElement('div');
+    snowContainer.id = 'snow-container';
+    document.body.appendChild(snowContainer);
+
+    // Snowflake characters
+    const snowflakes = ['❄', '❅', '❆', '✻', '✼', '❉'];
+
+    // Create snowflakes
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+
+        // Random position
+        snowflake.style.left = Math.random() * 100 + '%';
+
+        // Random size
+        const size = Math.random() * 0.5 + 0.5;
+        snowflake.style.fontSize = size + 'em';
+
+        // Random animation duration (slower = more realistic)
+        const duration = Math.random() * 10 + 10;
+        snowflake.style.animationDuration = duration + 's';
+
+        // Random delay
+        snowflake.style.animationDelay = Math.random() * 5 + 's';
+
+        // Random opacity
+        snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+
+        snowContainer.appendChild(snowflake);
+
+        // Remove snowflake after animation
+        setTimeout(() => {
+            snowflake.remove();
+        }, (duration + 5) * 1000);
+    }
+
+    // Create initial snowflakes
+    for (let i = 0; i < 50; i++) {
+        createSnowflake();
+    }
+
+    // Continuously create new snowflakes
+    setInterval(createSnowflake, 300);
+})();
+
+// ============================================
+// Christmas Lights Animation
+// ============================================
+(function () {
+    const lightsContainer = document.createElement('div');
+    lightsContainer.id = 'christmas-lights';
+    document.body.appendChild(lightsContainer);
+
+    // Create lights
+    for (let i = 0; i < 30; i++) {
+        const light = document.createElement('div');
+        light.className = 'light';
+        lightsContainer.appendChild(light);
+    }
+})();
 
 // ============================================
 // Dark Mode Toggle
@@ -9,8 +77,8 @@
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
 
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference or default to DARK mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme);
 
@@ -29,7 +97,7 @@
 })();
 
 // ============================================
-// Neural Network Background Animation
+// Neural Network Background Animation (Christmas themed)
 // ============================================
 (function () {
     const canvas = document.getElementById('neural-bg');
@@ -51,6 +119,8 @@
             this.vx = (Math.random() - 0.5) * 0.5;
             this.vy = (Math.random() - 0.5) * 0.5;
             this.radius = Math.random() * 2 + 1;
+            // Christmas colors
+            this.colorIndex = Math.floor(Math.random() * 3);
         }
 
         update() {
@@ -65,24 +135,25 @@
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = getNodeColor();
+            ctx.fillStyle = getNodeColor(this.colorIndex);
             ctx.fill();
         }
     }
 
-    // Get color based on theme
-    function getNodeColor() {
+    // Get color based on theme and index
+    function getNodeColor(index) {
         const theme = document.documentElement.getAttribute('data-theme');
-        return theme === 'dark'
-            ? 'rgba(99, 102, 241, 0.6)'
-            : 'rgba(99, 102, 241, 0.4)';
+        const colors = theme === 'dark'
+            ? ['rgba(196, 30, 58, 0.6)', 'rgba(45, 110, 45, 0.6)', 'rgba(212, 175, 55, 0.6)']
+            : ['rgba(196, 30, 58, 0.4)', 'rgba(45, 110, 45, 0.4)', 'rgba(212, 175, 55, 0.4)'];
+        return colors[index];
     }
 
     function getConnectionColor() {
         const theme = document.documentElement.getAttribute('data-theme');
         return theme === 'dark'
-            ? 'rgba(236, 72, 153, 0.3)'
-            : 'rgba(236, 72, 153, 0.2)';
+            ? 'rgba(212, 175, 55, 0.3)'
+            : 'rgba(212, 175, 55, 0.2)';
     }
 
     // Create nodes
@@ -161,7 +232,7 @@
                     top: 10px;
                     right: 10px;
                     padding: 6px 12px;
-                    background: #6366f1;
+                    background: #c41e3a;
                     color: white;
                     border: none;
                     border-radius: 6px;
@@ -172,12 +243,12 @@
                 `;
 
                 copyButton.addEventListener('mouseenter', function () {
-                    this.style.background = '#4f46e5';
+                    this.style.background = '#a01729';
                     this.style.transform = 'translateY(-2px)';
                 });
 
                 copyButton.addEventListener('mouseleave', function () {
-                    this.style.background = '#6366f1';
+                    this.style.background = '#c41e3a';
                     this.style.transform = 'translateY(0)';
                 });
 
@@ -185,11 +256,11 @@
                     navigator.clipboard.writeText(text).then(() => {
                         const originalText = this.textContent;
                         this.textContent = '✅ Copied!';
-                        this.style.background = '#14b8a6';
+                        this.style.background = '#2d6e2d';
 
                         setTimeout(() => {
                             this.textContent = originalText;
-                            this.style.background = '#6366f1';
+                            this.style.background = '#c41e3a';
                         }, 2000);
                     });
                 });
@@ -304,4 +375,4 @@
     });
 })();
 
-console.log('🤖 ML Researcher Theme loaded! Built with Python & ML magic ✨');
+console.log('🎄 Christmas Theme loaded! Happy Holidays! ✨❄️');
