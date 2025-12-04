@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,18 @@
     <meta name="author" content="{{ site.author }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
-    <meta property="og:description" content="{{ page.og_description | default: page.description | default: site.description }}">
+    <meta property="og:description"
+        content="{{ page.og_description | default: page.description | default: site.description }}">
     <link rel="stylesheet" href="{{ '/theme/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/theme/css/christmas.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ '/images/icon_logo.png' | relative_url }}">
 </head>
+
 <body>
     <canvas id="neural-bg"></canvas>
 
@@ -27,6 +33,7 @@
                         <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
                     </h1>
                     <p class="site-subtitle">Ph.D. in Computer Science</p>
+                    <p class="christmas-message">🎄 Merry Christmas! ❄️</p>
                 </div>
 
                 <nav class="main-nav">
@@ -55,14 +62,14 @@
             <div class="footer-content">
                 <div class="social-links">
                     {% for link in site.social_links %}
-                            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.title }}">
-                                {{ link.label }}
-                            </a>
+                    <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.title }}">
+                        {{ link.label }}
+                    </a>
                     {% endfor %}
                 </div>
 
                 <div class="footer-info">
-                    <p>&copy;  {{ site.author }}. Built with ≡ƒÉì Python & Γ£¿ ML magic.</p>
+                    <p>&copy; {{ site.author }}. Built with ≡ƒÉì Python & Γ£¿ ML magic.</p>
                     <p class="tech-stack">Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a></p>
                 </div>
             </div>
@@ -71,4 +78,5 @@
 
     <script src="{{ '/theme/js/main.js' | relative_url }}"></script>
 </body>
+
 </html>
