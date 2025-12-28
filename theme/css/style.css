@@ -651,6 +651,117 @@ hr {
 }
 
 /* ============================================
+   Publications Grid & Cards
+   ============================================ */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-lg) 0 var(--spacing-2xl);
+    width: 100%;
+}
+
+.publication-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    /* Important for grid item content overflow */
+    overflow: hidden;
+}
+
+.publication-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
+}
+
+.publication-card h3 {
+    font-size: var(--font-size-lg);
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+    color: var(--color-primary);
+}
+
+.publication-card .pub-venue {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text);
+}
+
+.publication-card .pub-authors {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.publication-card .pub-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+}
+
+.publication-card .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.publication-card .pub-links a {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.publication-card .pub-links a:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    text-decoration: none;
+}
+
+.publication-card .bibtex-toggle {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    margin-top: auto;
+}
+
+.publication-card .bibtex-container {
+    margin-top: var(--spacing-md);
+    font-size: 0.75rem;
+}
+
+.publication-card .bibtex-container pre {
+    padding: var(--spacing-sm);
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .publications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
    CV Download Button
    ============================================ */
 .cv-download-btn:hover {

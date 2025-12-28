@@ -3,74 +3,6 @@
 // ============================================
 
 // ============================================
-// Falling Snow Animation
-// ============================================
-(function () {
-    // Create snow container
-    const snowContainer = document.createElement('div');
-    snowContainer.id = 'snow-container';
-    document.body.appendChild(snowContainer);
-
-    // Snowflake characters
-    const snowflakes = ['❄', '❅', '❆', '✻', '✼', '❉'];
-
-    // Create snowflakes
-    function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
-
-        // Random position
-        snowflake.style.left = Math.random() * 100 + '%';
-
-        // Random size
-        const size = Math.random() * 0.5 + 0.5;
-        snowflake.style.fontSize = size + 'em';
-
-        // Random animation duration (slower = more realistic)
-        const duration = Math.random() * 10 + 10;
-        snowflake.style.animationDuration = duration + 's';
-
-        // Random delay
-        snowflake.style.animationDelay = Math.random() * 5 + 's';
-
-        // Random opacity
-        snowflake.style.opacity = Math.random() * 0.6 + 0.4;
-
-        snowContainer.appendChild(snowflake);
-
-        // Remove snowflake after animation
-        setTimeout(() => {
-            snowflake.remove();
-        }, (duration + 5) * 1000);
-    }
-
-    // Create initial snowflakes
-    for (let i = 0; i < 50; i++) {
-        createSnowflake();
-    }
-
-    // Continuously create new snowflakes
-    setInterval(createSnowflake, 300);
-})();
-
-// ============================================
-// Christmas Lights Animation
-// ============================================
-(function () {
-    const lightsContainer = document.createElement('div');
-    lightsContainer.id = 'christmas-lights';
-    document.body.appendChild(lightsContainer);
-
-    // Create lights
-    for (let i = 0; i < 30; i++) {
-        const light = document.createElement('div');
-        light.className = 'light';
-        lightsContainer.appendChild(light);
-    }
-})();
-
-// ============================================
 // Dark Mode Toggle
 // ============================================
 (function () {
@@ -97,7 +29,7 @@
 })();
 
 // ============================================
-// Neural Network Background Animation (Christmas themed)
+// Neural Network Background Animation
 // ============================================
 (function () {
     const canvas = document.getElementById('neural-bg');
@@ -144,16 +76,16 @@
     function getNodeColor(index) {
         const theme = document.documentElement.getAttribute('data-theme');
         const colors = theme === 'dark'
-            ? ['rgba(196, 30, 58, 0.6)', 'rgba(45, 110, 45, 0.6)', 'rgba(212, 175, 55, 0.6)']
-            : ['rgba(196, 30, 58, 0.4)', 'rgba(45, 110, 45, 0.4)', 'rgba(212, 175, 55, 0.4)'];
+            ? ['rgba(99, 102, 241, 0.6)', 'rgba(236, 72, 153, 0.6)', 'rgba(20, 184, 166, 0.6)']
+            : ['rgba(99, 102, 241, 0.4)', 'rgba(236, 72, 153, 0.4)', 'rgba(20, 184, 166, 0.4)'];
         return colors[index];
     }
 
     function getConnectionColor() {
         const theme = document.documentElement.getAttribute('data-theme');
         return theme === 'dark'
-            ? 'rgba(212, 175, 55, 0.3)'
-            : 'rgba(212, 175, 55, 0.2)';
+            ? 'rgba(99, 102, 241, 0.3)'
+            : 'rgba(99, 102, 241, 0.2)';
     }
 
     // Create nodes
@@ -232,7 +164,7 @@
                     top: 10px;
                     right: 10px;
                     padding: 6px 12px;
-                    background: #c41e3a;
+                    background: var(--color-primary);
                     color: white;
                     border: none;
                     border-radius: 6px;
@@ -243,12 +175,12 @@
                 `;
 
                 copyButton.addEventListener('mouseenter', function () {
-                    this.style.background = '#a01729';
+                    this.style.background = 'var(--color-primary-dark)';
                     this.style.transform = 'translateY(-2px)';
                 });
 
                 copyButton.addEventListener('mouseleave', function () {
-                    this.style.background = '#c41e3a';
+                    this.style.background = 'var(--color-primary)';
                     this.style.transform = 'translateY(0)';
                 });
 
@@ -256,11 +188,11 @@
                     navigator.clipboard.writeText(text).then(() => {
                         const originalText = this.textContent;
                         this.textContent = '✅ Copied!';
-                        this.style.background = '#2d6e2d';
+                        this.style.background = 'var(--color-accent)';
 
                         setTimeout(() => {
                             this.textContent = originalText;
-                            this.style.background = '#c41e3a';
+                            this.style.background = 'var(--color-primary)';
                         }, 2000);
                     });
                 });
@@ -375,4 +307,4 @@
     });
 })();
 
-console.log('🎄 Christmas Theme loaded! Happy Holidays! ✨❄️');
+console.log('Theme loaded successfully!');
