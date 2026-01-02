@@ -1,16 +1,17 @@
 personal_website/
 # Personal Research Website
 
-Modern, scientific yet fun personal research website now powered by [Jekyll](https://jekyllrb.com/) and ready for GitHub Pages.
+Modern, high-credibility academic researcher website powered by [Jekyll](https://jekyllrb.com/) and optimized for GitHub Pages. Designed for AI/ML researchers to present a formal identity, research hub, and academic CV.
 
 ## 🚀 Features
 
-- **Scientific aesthetic**: Clean, professional academic layout with playful details
-- **ML/AI theming**: Animated neural network background and gradient highlights
-- **Dark mode**: Persistent theme toggle with smooth transitions
-- **Responsive design**: Polished experience across devices
-- **Interactive extras**: BibTeX copy buttons, smooth scrolling, subtle animations
-- **SEO ready**: Semantic markup and structured metadata throughout
+- **Formal Academic Identity**: Optimized for high-credibility researcher profiles and academic recruitment (EEAT aligned)
+- **Research Hub**: Structured sections for Research Areas, Projects, Datasets, and Publications
+- **Teaching & Mentorship**: Dedicated tracking for courses (e.g., WUR 2025) and student supervision
+- **Academic CV**: Clean HTML mirror of your CV with integrated PDF download
+- **Scientific Aesthetic**: Professional layout with a subtle animated neural network background
+- **Dark Mode**: Persistent, vertically-aligned theme toggle with smooth transitions
+- **SEO Optimized**: Semantic HTML and rigorous keyword metadata for academic indexing
 
 ## 📋 Prerequisites
 
@@ -42,11 +43,13 @@ Modern, scientific yet fun personal research website now powered by [Jekyll](htt
 
 Site content lives directly in the top-level HTML files:
 
-- `index.html` – home hero and quick bio
-- `about/index.html` – detailed bio and profile interaction
-- `publications/index.html` – publication list with BibTeX blocks
-- `research-interests/index.html` – research focus and philosophy
-- `cv/index.html` – CV, downloadable PDF links, contact info
+- `index.html` – formal landing page and research identity statement
+- `about/index.html` – detailed research profile and academic narrative
+- `research-areas/index.html` – deep dive into problem scopes and scientific contributions
+- `publications/index.html` – standardized publication list with BibTeX support
+- `projects/index.html` – technical project descriptions and dataset links
+- `teaching/index.html` – teaching experience, courses (e.g., AIN30306), and mentorship
+- `cv/index.html` – professional CV mirror with contact details
 
 Assets remain under `images/` and `theme/` just as before, so styling and behaviour stay identical. Update images (profile photo, favicon, PDF, etc.) in `images/` as needed.
 
@@ -77,14 +80,17 @@ GitHub Pages builds and deploys automatically via `.github/workflows/github-page
 ├── cv/
 │   └── index.html
 ├── images/
-│   ├── 404-lost-in-latent-space.png
 │   ├── Leandro_Stival_CV.pdf
 │   ├── icon_logo.png
 │   └── profile.jpg
 ├── index.html
+├── projects/
+│   └── index.html
 ├── publications/
 │   └── index.html
-├── research-interests/
+├── research-areas/
+│   └── index.html
+├── teaching/
 │   └── index.html
 ├── theme/
 │   ├── css/style.css

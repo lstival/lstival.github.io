@@ -1,5 +1,5 @@
 // ============================================
-// Christmas Theme - ML Researcher
+// AI Researcher Theme - Core Logic
 // ============================================
 
 // ============================================
@@ -8,6 +8,8 @@
 (function () {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
+
+    if (!themeToggle || !themeIcon) return;
 
     // Check for saved theme preference or default to DARK mode
     const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -33,6 +35,7 @@
 // ============================================
 (function () {
     const canvas = document.getElementById('neural-bg');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
     // Set canvas size
@@ -51,7 +54,6 @@
             this.vx = (Math.random() - 0.5) * 0.5;
             this.vy = (Math.random() - 0.5) * 0.5;
             this.radius = Math.random() * 2 + 1;
-            // Christmas colors
             this.colorIndex = Math.floor(Math.random() * 3);
         }
 
@@ -75,17 +77,18 @@
     // Get color based on theme and index
     function getNodeColor(index) {
         const theme = document.documentElement.getAttribute('data-theme');
+        // Professional blue/indigo/teal palette
         const colors = theme === 'dark'
-            ? ['rgba(99, 102, 241, 0.6)', 'rgba(236, 72, 153, 0.6)', 'rgba(20, 184, 166, 0.6)']
-            : ['rgba(99, 102, 241, 0.4)', 'rgba(236, 72, 153, 0.4)', 'rgba(20, 184, 166, 0.4)'];
+            ? ['rgba(99, 102, 241, 0.4)', 'rgba(79, 70, 229, 0.4)', 'rgba(20, 184, 166, 0.4)']
+            : ['rgba(99, 102, 241, 0.2)', 'rgba(79, 70, 229, 0.2)', 'rgba(20, 184, 166, 0.2)'];
         return colors[index];
     }
 
     function getConnectionColor() {
         const theme = document.documentElement.getAttribute('data-theme');
         return theme === 'dark'
-            ? 'rgba(99, 102, 241, 0.3)'
-            : 'rgba(99, 102, 241, 0.2)';
+            ? 'rgba(99, 102, 241, 0.2)'
+            : 'rgba(99, 102, 241, 0.1)';
     }
 
     // Create nodes
@@ -143,7 +146,6 @@
 // Copy BibTeX to Clipboard
 // ============================================
 (function () {
-    // Add copy buttons to BibTeX code blocks
     document.addEventListener('DOMContentLoaded', function () {
         const bibtexBlocks = document.querySelectorAll('pre code');
 
@@ -157,42 +159,46 @@
                 wrapper.style.position = 'relative';
 
                 const copyButton = document.createElement('button');
-                copyButton.textContent = '📋 Copy BibTeX';
+                copyButton.textContent = 'Copy BibTeX';
                 copyButton.className = 'copy-bibtex-btn';
                 copyButton.style.cssText = `
                     position: absolute;
                     top: 10px;
                     right: 10px;
                     padding: 6px 12px;
-                    background: var(--color-primary);
-                    color: white;
-                    border: none;
+                    background: var(--color-bg-tertiary);
+                    color: var(--color-text-secondary);
+                    border: 1px solid var(--color-border);
                     border-radius: 6px;
                     cursor: pointer;
-                    font-size: 0.875rem;
+                    font-size: 0.8rem;
                     font-weight: 500;
                     transition: all 0.2s ease;
                 `;
 
                 copyButton.addEventListener('mouseenter', function () {
-                    this.style.background = 'var(--color-primary-dark)';
-                    this.style.transform = 'translateY(-2px)';
+                    this.style.background = 'var(--color-primary)';
+                    this.style.color = 'white';
+                    this.style.transform = 'translateY(-1px)';
                 });
 
                 copyButton.addEventListener('mouseleave', function () {
-                    this.style.background = 'var(--color-primary)';
+                    this.style.background = 'var(--color-bg-tertiary)';
+                    this.style.color = 'var(--color-text-secondary)';
                     this.style.transform = 'translateY(0)';
                 });
 
                 copyButton.addEventListener('click', function () {
                     navigator.clipboard.writeText(text).then(() => {
                         const originalText = this.textContent;
-                        this.textContent = '✅ Copied!';
+                        this.textContent = 'Copied';
                         this.style.background = 'var(--color-accent)';
+                        this.style.color = 'white';
 
                         setTimeout(() => {
                             this.textContent = originalText;
-                            this.style.background = 'var(--color-primary)';
+                            this.style.background = 'var(--color-bg-tertiary)';
+                            this.style.color = 'var(--color-text-secondary)';
                         }, 2000);
                     });
                 });
@@ -249,7 +255,7 @@
 })();
 
 // ============================================
-// Animate Elements on Scroll (Optional)
+// Element Visibility and Fade-in
 // ============================================
 (function () {
     const observerOptions = {
@@ -271,39 +277,10 @@
 
         animatedElements.forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.transform = 'translateY(15px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(el);
         });
-    });
-})();
-
-// ============================================
-// Profile Image Toggle
-// ============================================
-(function () {
-    document.addEventListener('DOMContentLoaded', function () {
-        const profileToggle = document.getElementById('profile-toggle');
-        const profileImg = document.getElementById('profile-img');
-        const profileEmoji = document.getElementById('profile-emoji');
-
-        if (profileToggle && profileImg && profileEmoji) {
-            let showingImage = true;
-
-            profileToggle.addEventListener('click', function () {
-                if (showingImage) {
-                    profileImg.style.display = 'none';
-                    profileEmoji.style.display = 'flex';
-                } else {
-                    profileImg.style.display = 'block';
-                    profileEmoji.style.display = 'none';
-                }
-                showingImage = !showingImage;
-            });
-
-            // Add cursor pointer to indicate clickability
-            profileToggle.style.cursor = 'pointer';
-        }
     });
 })();
 

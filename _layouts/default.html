@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
-    <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
+    <meta name="keywords" content="{{ site.keywords }}">
     <meta name="author" content="{{ site.author }}">
+
+    <!-- SEO Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
-    <meta property="og:description"
-        content="{{ page.og_description | default: page.description | default: site.description }}">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
     <link rel="stylesheet" href="{{ '/theme/css/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,22 +31,27 @@
         <div class="container">
             <div class="header-content">
                 <div class="site-branding">
-                    <h1 class="site-title">
-                        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-                    </h1>
-                    <p class="site-subtitle">Ph.D. in Computer Science</p>
+                    <h2 class="site-title">
+                        <a href="{{ '/' | relative_url }}">{{ site.author }}</a>
+                    </h2>
+                    <p class="site-subtitle">Postdoctoral Researcher in Artificial Intelligence</p>
                 </div>
 
                 <nav class="main-nav">
                     <ul>
+                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
                         <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                        <li><a href="{{ '/research-areas/' | relative_url }}">Research</a></li>
                         <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-                        <li><a href="{{ '/research-interests/' | relative_url }}">Research</a></li>
+                        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+                        <li><a href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
                         <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+                        <li class="nav-toggle-item">
+                            <button id="theme-toggle" aria-label="Toggle dark mode">
+                                <span class="theme-icon">🌙</span>
+                            </button>
+                        </li>
                     </ul>
-                    <button id="theme-toggle" aria-label="Toggle dark mode">
-                        <span class="theme-icon">🌙</span>
-                    </button>
                 </nav>
             </div>
         </div>
@@ -58,6 +66,12 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-contact">
+                    <p><strong>Leandro Stival</strong><br>
+                        Wageningen University & Research<br>
+                        Wageningen, Netherlands</p>
+                </div>
+
                 <div class="social-links">
                     {% for link in site.social_links %}
                     <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.title }}">
@@ -67,8 +81,8 @@
                 </div>
 
                 <div class="footer-info">
-                    <p>&copy; {{ site.author }}. Built with 🐍 Python & ✨ ML magic.</p>
-                    <p class="tech-stack">Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a></p>
+                    <p>&copy; {{ site.author }}. All rights reserved.</p>
+                    <p class="last-updated">Site updated: January 2026</p>
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
-title: Leandro Stival
+title: Leandro Stival | AI Researcher
 author: Leandro Stival
 email: leandro.stival@wur.nl
-description: Leandro Stival - Ph.D. in Computer Science specializing in Self-Supervised Learning
-keywords: machine learning, deep learning, computer vision, video colorization, self-supervised learning, research, AI
+description: Leandro Stival is a researcher in Artificial Intelligence specializing in Self-Supervised Learning, Multimodal Data, and Remote Sensing.
+keywords: Artificial Intelligence Researcher, Self-Supervised Learning, Multimodal Learning, Spatio-Temporal Data, Remote Sensing, Time Series Analysis, Representation Learning, Foundation Models, Computer Vision, Machine Learning Research
 url: "https://lstival.github.io"
 baseurl: ""
 permalink: pretty
@@ -13,6 +13,24 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Research
+    url: /research-areas/
+  - title: Publications
+    url: /publications/
+  - title: Projects
+    url: /projects/
+  - title: Teaching
+    url: /teaching/
+  - title: CV
+    url: /cv/
+
 social_links:
   - label: Email
     title: Email
@@ -26,9 +44,6 @@ social_links:
   - label: LinkedIn
     title: LinkedIn
     url: "https://www.linkedin.com/in/leandro-stival-63651ba0"
-  - label: ResearchGate
-    title: ResearchGate
-    url: "https://www.researchgate.net/profile/Leandro-Stival-3"
   - label: ORCID
     title: ORCID
     url: "https://orcid.org/0000-0002-3379-6813"
